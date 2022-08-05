@@ -1,4 +1,0 @@
-cd /home/hugo/myblog/public
-git add .
-git commit -m "提交"
-git push 
