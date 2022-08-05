@@ -6,7 +6,16 @@
     <description>Recent content in 📝 笔记 on 超级星小汤-tanglx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 29 Jul 2022 01:00:23 +0800</lastBuildDate><atom:link href="/posts/note/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Aug 2022 10:07:28 +0800</lastBuildDate><atom:link href="/posts/note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(一)国赛信息安全与评估笔记</title>
+      <link>/posts/note/%E4%B8%80%E5%9B%BD%E8%B5%9B%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%B8%8E%E8%AF%84%E4%BC%B0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Fri, 05 Aug 2022 10:07:28 +0800</pubDate>
+      
+      <guid>/posts/note/%E4%B8%80%E5%9B%BD%E8%B5%9B%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%B8%8E%E8%AF%84%E4%BC%B0%E7%AC%94%E8%AE%B0/</guid>
+      <description>一、设备 (CS)三层虚拟化交换机 (FW)防火墙 (WAF)WEB 应用防火墙 (BC)网络日志系统 无线交换机 POE 模块 服务器</description>
+    </item>
+    
     <item>
       <title>关于博客的机密脚本</title>
       <link>/posts/note/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%9C%BA%E5%AF%86%E8%84%9A%E6%9C%AC/</link>
