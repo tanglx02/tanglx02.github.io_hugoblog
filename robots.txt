@@ -1,3 +1,3 @@
 User-agent: *
 Disallow:
-Sitemap: /sitemap.xml
+Sitemap: https://tanglx02.gitee.io/sitemap.xml

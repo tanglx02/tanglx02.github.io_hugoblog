@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>博客 on 超级星小汤-tanglx</title>
-    <link>/tags/%E5%8D%9A%E5%AE%A2/</link>
+    <link>https://tanglx02.gitee.io/tags/%E5%8D%9A%E5%AE%A2/</link>
     <description>Recent content in 博客 on 超级星小汤-tanglx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 29 Jul 2022 01:00:23 +0800</lastBuildDate><atom:link href="/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Jul 2022 01:00:23 +0800</lastBuildDate><atom:link href="https://tanglx02.gitee.io/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>关于博客的机密脚本</title>
-      <link>/posts/note/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%9C%BA%E5%AF%86%E8%84%9A%E6%9C%AC/</link>
+      <link>https://tanglx02.gitee.io/posts/note/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%9C%BA%E5%AF%86%E8%84%9A%E6%9C%AC/</link>
       <pubDate>Fri, 29 Jul 2022 01:00:23 +0800</pubDate>
       
-      <guid>/posts/note/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%9C%BA%E5%AF%86%E8%84%9A%E6%9C%AC/</guid>
+      <guid>https://tanglx02.gitee.io/posts/note/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%9C%BA%E5%AF%86%E8%84%9A%E6%9C%AC/</guid>
       <description>小书匠坚果云的webdav 服务器地址： https://dav.jianguoyun.com/dav/content 账户：tanglx@aliyun.com 应用密码: afynfa8724ck6rih 小书匠的模板信息 --- title: 未命名文件 date: &amp;lt;% print(moment().format(&amp;#39;YYYY-MM-DDTHH:mm:ss+08:00&amp;#39;))%&amp;gt; lastmod: &amp;lt;% print(moment().format(&amp;#39;YYYY-MM-DDTHH:mm:ss+08:00&amp;#39;))%&amp;gt; author: [&amp;</description>
     </item>
     
