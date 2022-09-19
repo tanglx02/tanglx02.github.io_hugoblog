@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>超级星小汤-tanglx</title>
+    <link>https://blog.tanglx.cn/</link>
+    <description>Recent content on 超级星小汤-tanglx</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 01 Sep 2022 17:23:07 +0800</lastBuildDate><atom:link href="https://blog.tanglx.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python学习</title>
+      <link>https://blog.tanglx.cn/posts/note/python%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Thu, 01 Sep 2022 17:23:07 +0800</pubDate>
+      
+      <guid>https://blog.tanglx.cn/posts/note/python%E5%AD%A6%E4%B9%A0/</guid>
+      <description>[toc] 1.字面量 2.数据类型转换 int(x) float(x) string(x) 将x转为指定的类型 3.标识符 1.什么是标识符? 用户编写代码时，对变量、类、方法等编写的名字，叫做标识符。 2</description>
+    </item>
+    
+    <item>
+      <title>2022.8健身记录贴</title>
+      <link>https://blog.tanglx.cn/posts/life/2022.8%E5%81%A5%E8%BA%AB%E8%AE%B0%E5%BD%95%E8%B4%B4/</link>
+      <pubDate>Thu, 25 Aug 2022 23:34:59 +0800</pubDate>
+      
+      <guid>https://blog.tanglx.cn/posts/life/2022.8%E5%81%A5%E8%BA%AB%E8%AE%B0%E5%BD%95%E8%B4%B4/</guid>
+      <description>[toc] 25号 手疼俯卧撑做不动，俯卧撑10个一组可以做三组，哑铃平举和侧举12个一组做了5组</description>
+    </item>
+    
+    <item>
+      <title>自律健身开始的day1</title>
+      <link>https://blog.tanglx.cn/posts/life/%E8%87%AA%E5%BE%8B%E5%81%A5%E8%BA%AB%E5%BC%80%E5%A7%8B%E7%9A%84day1/</link>
+      <pubDate>Wed, 24 Aug 2022 23:22:59 +0800</pubDate>
+      
+      <guid>https://blog.tanglx.cn/posts/life/%E8%87%AA%E5%BE%8B%E5%81%A5%E8%BA%AB%E5%BC%80%E5%A7%8B%E7%9A%84day1/</guid>
+      <description>这一天是2022年8月24日 告诫自己 厌倦了之前每天熬夜不规律生活、暴饮暴食、不锻炼、不学习日子，现在的自己脑子里空荡荡的，圆肩驼背，没有气质</description>
+    </item>
+    
+    <item>
+      <title>kali,ctf工具</title>
+      <link>https://blog.tanglx.cn/posts/note/kalictf%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Mon, 22 Aug 2022 16:15:45 +0800</pubDate>
+      
+      <guid>https://blog.tanglx.cn/posts/note/kalictf%E5%B7%A5%E5%85%B7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>XCTF刷题</title>
+      <link>https://blog.tanglx.cn/posts/note/xctf%E5%88%B7%E9%A2%98/</link>
+      <pubDate>Mon, 22 Aug 2022 14:38:06 +0800</pubDate>
+      
+      <guid>https://blog.tanglx.cn/posts/note/xctf%E5%88%B7%E9%A2%98/</guid>
+      <description>1.流量分析(http拼接) 题目下载 1.解体思路 点击左上角导出对象类型为http，即可挨个查看报文进行查看 流量包为多个带range头部发送的</description>
+    </item>
+    
+    <item>
+      <title>文件头修复</title>
+      <link>https://blog.tanglx.cn/posts/note/%E6%96%87%E4%BB%B6%E5%A4%B4%E4%BF%AE%E5%A4%8D/</link>
+      <pubDate>Mon, 22 Aug 2022 10:29:15 +0800</pubDate>
+      
+      <guid>https://blog.tanglx.cn/posts/note/%E6%96%87%E4%BB%B6%E5%A4%B4%E4%BF%AE%E5%A4%8D/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>zip伪加密和破解</title>
+      <link>https://blog.tanglx.cn/posts/note/zip%E4%BC%AA%E5%8A%A0%E5%AF%86%E5%92%8C%E7%A0%B4%E8%A7%A3/</link>
+      <pubDate>Mon, 22 Aug 2022 09:55:25 +0800</pubDate>
+      
+      <guid>https://blog.tanglx.cn/posts/note/zip%E4%BC%AA%E5%8A%A0%E5%AF%86%E5%92%8C%E7%A0%B4%E8%A7%A3/</guid>
+      <description>伪加密 题目下载 解法一 使用binwalk 工具直接进行分离即可得到 binwalk -e 0cb6f418-26ab-40ec-86db-ec7134b27e67.zip 解法二 使用hexeditor工具以16进制进行打开，504B0304 或者</description>
+    </item>
+    
+    <item>
+      <title>国赛信息安全题目回顾</title>
+      <link>https://blog.tanglx.cn/posts/note/%E5%9B%BD%E8%B5%9B%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E9%A2%98%E7%9B%AE%E5%9B%9E%E9%A1%BE/</link>
+      <pubDate>Sun, 21 Aug 2022 14:35:24 +0800</pubDate>
+      
+      <guid>https://blog.tanglx.cn/posts/note/%E5%9B%BD%E8%B5%9B%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E9%A2%98%E7%9B%AE%E5%9B%9E%E9%A1%BE/</guid>
+      <description>第二阶段 所有素材都在本地，完全不与外界有任何联系 1 系统审计（事件响应） 题目直说这个是系统文件，但是看文件后缀ova可以推测出来这个是虚拟机文</description>
+    </item>
+    
+    <item>
+      <title>(一)国赛信息安全与评估笔记</title>
+      <link>https://blog.tanglx.cn/posts/note/%E4%B8%80%E5%9B%BD%E8%B5%9B%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%B8%8E%E8%AF%84%E4%BC%B0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Fri, 05 Aug 2022 10:07:28 +0800</pubDate>
+      
+      <guid>https://blog.tanglx.cn/posts/note/%E4%B8%80%E5%9B%BD%E8%B5%9B%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%B8%8E%E8%AF%84%E4%BC%B0%E7%AC%94%E8%AE%B0/</guid>
+      <description>[toc] 一、知识点 ip地址规划 例题: 已知原AP管理地址为10.81.0.0/15，为了避免地址浪费请重新规划和配置IP地址段，要求如下： 1.使用原</description>
+    </item>
+    
+    <item>
+      <title>关于博客的机密脚本</title>
+      <link>https://blog.tanglx.cn/posts/note/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%9C%BA%E5%AF%86%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Fri, 29 Jul 2022 01:00:23 +0800</pubDate>
+      
+      <guid>https://blog.tanglx.cn/posts/note/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%9C%BA%E5%AF%86%E8%84%9A%E6%9C%AC/</guid>
+      <description>小书匠坚果云的webdav 服务器地址： https://dav.jianguoyun.com/dav/content 账户：tanglx@aliyun.com 应用密码: afynfa8724ck6rih 小书匠的模板信息 --- title: 未命名文件 date: &amp;lt;% print(moment().format(&amp;#39;YYYY-MM-DDTHH:mm:ss+08:00&amp;#39;))%&amp;gt; lastmod: &amp;lt;% print(moment().format(&amp;#39;YYYY-MM-DDTHH:mm:ss+08:00&amp;#39;))%&amp;gt; author: [&amp;</description>
+    </item>
+    
+    <item>
+      <title>tech</title>
+      <link>https://blog.tanglx.cn/posts/tech/tech/</link>
+      <pubDate>Thu, 05 May 2022 00:18:23 +0800</pubDate>
+      
+      <guid>https://blog.tanglx.cn/posts/tech/tech/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>game</title>
+      <link>https://blog.tanglx.cn/posts/game/game/</link>
+      <pubDate>Thu, 05 May 2022 00:18:15 +0800</pubDate>
+      
+      <guid>https://blog.tanglx.cn/posts/game/game/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>life</title>
+      <link>https://blog.tanglx.cn/posts/life/life/</link>
+      <pubDate>Thu, 05 May 2022 00:18:06 +0800</pubDate>
+      
+      <guid>https://blog.tanglx.cn/posts/life/life/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>note</title>
+      <link>https://blog.tanglx.cn/posts/note/note/</link>
+      <pubDate>Thu, 05 May 2022 00:18:06 +0800</pubDate>
+      
+      <guid>https://blog.tanglx.cn/posts/note/note/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>photo</title>
+      <link>https://blog.tanglx.cn/posts/photo/photo/</link>
+      <pubDate>Thu, 05 May 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://blog.tanglx.cn/posts/photo/photo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>🤝友链</title>
+      <link>https://blog.tanglx.cn/links/</link>
+      <pubDate>Sat, 06 Nov 2021 15:15:53 +0800</pubDate>
+      
+      <guid>https://blog.tanglx.cn/links/</guid>
+      <description>Sulv&amp;#39;s Blog 一个记录技术、阅读、生活的博客 👉友链格式 名称： Sulv&amp;rsquo;s Blog 网址： https://www.sulvblog.cn 图标： https://www.sulvblog.cn/img/Q.gif 描述： 一个记录技术、阅读、生活的博客 👉友链申请要求 秉承互换友链原则、文</description>
+    </item>
+    
+    <item>
+      <title>🙋🏻‍♂️关于</title>
+      <link>https://blog.tanglx.cn/about/</link>
+      <pubDate>Sat, 06 Nov 2021 14:57:28 +0800</pubDate>
+      
+      <guid>https://blog.tanglx.cn/about/</guid>
+      <description>关于我 id: tanglx 职业: 学生 运动: 跑步、乒乓球、爬山</description>
+    </item>
+    
+    
+    
+  </channel>
+</rss>
