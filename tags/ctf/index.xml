@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>CTF on 超级星小汤-tanglx</title>
-    <link>https://blog.tanglx.cn/tags/ctf/</link>
+    <link>/tags/ctf/</link>
     <description>Recent content in CTF on 超级星小汤-tanglx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 22 Aug 2022 16:15:45 +0800</lastBuildDate><atom:link href="https://blog.tanglx.cn/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Aug 2022 16:15:45 +0800</lastBuildDate><atom:link href="/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>kali,ctf工具</title>
-      <link>https://blog.tanglx.cn/posts/note/kalictf%E5%B7%A5%E5%85%B7/</link>
+      <link>/posts/note/kalictf%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Mon, 22 Aug 2022 16:15:45 +0800</pubDate>
       
-      <guid>https://blog.tanglx.cn/posts/note/kalictf%E5%B7%A5%E5%85%B7/</guid>
+      <guid>/posts/note/kalictf%E5%B7%A5%E5%85%B7/</guid>
       <description></description>
     </item>
     
     <item>
       <title>XCTF刷题</title>
-      <link>https://blog.tanglx.cn/posts/note/xctf%E5%88%B7%E9%A2%98/</link>
+      <link>/posts/note/xctf%E5%88%B7%E9%A2%98/</link>
       <pubDate>Mon, 22 Aug 2022 14:38:06 +0800</pubDate>
       
-      <guid>https://blog.tanglx.cn/posts/note/xctf%E5%88%B7%E9%A2%98/</guid>
+      <guid>/posts/note/xctf%E5%88%B7%E9%A2%98/</guid>
       <description>1.流量分析(http拼接) 题目下载 1.解体思路 点击左上角导出对象类型为http，即可挨个查看报文进行查看 流量包为多个带range头部发送的</description>
     </item>
     
     <item>
       <title>文件头修复</title>
-      <link>https://blog.tanglx.cn/posts/note/%E6%96%87%E4%BB%B6%E5%A4%B4%E4%BF%AE%E5%A4%8D/</link>
+      <link>/posts/note/%E6%96%87%E4%BB%B6%E5%A4%B4%E4%BF%AE%E5%A4%8D/</link>
       <pubDate>Mon, 22 Aug 2022 10:29:15 +0800</pubDate>
       
-      <guid>https://blog.tanglx.cn/posts/note/%E6%96%87%E4%BB%B6%E5%A4%B4%E4%BF%AE%E5%A4%8D/</guid>
+      <guid>/posts/note/%E6%96%87%E4%BB%B6%E5%A4%B4%E4%BF%AE%E5%A4%8D/</guid>
       <description></description>
     </item>
     
     <item>
       <title>zip伪加密和破解</title>
-      <link>https://blog.tanglx.cn/posts/note/zip%E4%BC%AA%E5%8A%A0%E5%AF%86%E5%92%8C%E7%A0%B4%E8%A7%A3/</link>
+      <link>/posts/note/zip%E4%BC%AA%E5%8A%A0%E5%AF%86%E5%92%8C%E7%A0%B4%E8%A7%A3/</link>
       <pubDate>Mon, 22 Aug 2022 09:55:25 +0800</pubDate>
       
-      <guid>https://blog.tanglx.cn/posts/note/zip%E4%BC%AA%E5%8A%A0%E5%AF%86%E5%92%8C%E7%A0%B4%E8%A7%A3/</guid>
+      <guid>/posts/note/zip%E4%BC%AA%E5%8A%A0%E5%AF%86%E5%92%8C%E7%A0%B4%E8%A7%A3/</guid>
       <description>伪加密 题目下载 解法一 使用binwalk 工具直接进行分离即可得到 binwalk -e 0cb6f418-26ab-40ec-86db-ec7134b27e67.zip 解法二 使用hexeditor工具以16进制进行打开，504B0304 或者</description>
     </item>
     

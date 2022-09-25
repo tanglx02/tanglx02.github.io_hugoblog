@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>比赛 on 超级星小汤-tanglx</title>
-    <link>https://blog.tanglx.cn/tags/%E6%AF%94%E8%B5%9B/</link>
+    <link>/tags/%E6%AF%94%E8%B5%9B/</link>
     <description>Recent content in 比赛 on 超级星小汤-tanglx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 21 Aug 2022 14:35:24 +0800</lastBuildDate><atom:link href="https://blog.tanglx.cn/tags/%E6%AF%94%E8%B5%9B/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Aug 2022 14:35:24 +0800</lastBuildDate><atom:link href="/tags/%E6%AF%94%E8%B5%9B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>国赛信息安全题目回顾</title>
-      <link>https://blog.tanglx.cn/posts/note/%E5%9B%BD%E8%B5%9B%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E9%A2%98%E7%9B%AE%E5%9B%9E%E9%A1%BE/</link>
+      <link>/posts/note/%E5%9B%BD%E8%B5%9B%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E9%A2%98%E7%9B%AE%E5%9B%9E%E9%A1%BE/</link>
       <pubDate>Sun, 21 Aug 2022 14:35:24 +0800</pubDate>
       
-      <guid>https://blog.tanglx.cn/posts/note/%E5%9B%BD%E8%B5%9B%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E9%A2%98%E7%9B%AE%E5%9B%9E%E9%A1%BE/</guid>
+      <guid>/posts/note/%E5%9B%BD%E8%B5%9B%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E9%A2%98%E7%9B%AE%E5%9B%9E%E9%A1%BE/</guid>
       <description>第二阶段 所有素材都在本地，完全不与外界有任何联系 1 系统审计（事件响应） 题目直说这个是系统文件，但是看文件后缀ova可以推测出来这个是虚拟机文</description>
     </item>
     
     <item>
       <title>(一)国赛信息安全与评估笔记</title>
-      <link>https://blog.tanglx.cn/posts/note/%E4%B8%80%E5%9B%BD%E8%B5%9B%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%B8%8E%E8%AF%84%E4%BC%B0%E7%AC%94%E8%AE%B0/</link>
+      <link>/posts/note/%E4%B8%80%E5%9B%BD%E8%B5%9B%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%B8%8E%E8%AF%84%E4%BC%B0%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Fri, 05 Aug 2022 10:07:28 +0800</pubDate>
       
-      <guid>https://blog.tanglx.cn/posts/note/%E4%B8%80%E5%9B%BD%E8%B5%9B%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%B8%8E%E8%AF%84%E4%BC%B0%E7%AC%94%E8%AE%B0/</guid>
+      <guid>/posts/note/%E4%B8%80%E5%9B%BD%E8%B5%9B%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%B8%8E%E8%AF%84%E4%BC%B0%E7%AC%94%E8%AE%B0/</guid>
       <description>[toc] 一、知识点 ip地址规划 例题: 已知原AP管理地址为10.81.0.0/15，为了避免地址浪费请重新规划和配置IP地址段，要求如下： 1.使用原</description>
     </item>
     
