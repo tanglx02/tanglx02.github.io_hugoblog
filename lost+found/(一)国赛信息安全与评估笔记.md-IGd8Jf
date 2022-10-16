@@ -1,0 +1,38 @@
+---
+title: (一)国赛信息安全与评估笔记
+date: 2022-08-05T10:07:28+08:00
+lastmod: 2022-08-05T10:07:28+08:00
+author: ["小汤"]
+keywords: 
+- 
+categories: 
+- 
+tags: 
+- 笔记
+- 比赛
+description: ""
+weight:
+slug: ""
+draft: false # 是否为草稿
+comments: true
+reward: true # 打赏
+mermaid: true #是否开启mermaid
+showToc: true # 显示目录
+TocOpen: true # 自动展开目录
+hidemeta: false # 是否隐藏文章的元信息，如发布日期、作者等
+disableShare: true # 底部不显示分享栏
+showbreadcrumbs: true #顶部显示路径
+cover:
+    image: "" #图片路径例如：posts/tech/123/123.png
+    caption: "" #图片底部描述
+    alt: ""
+    relative: false
+---
+# 一、设备
+## (CS)三层虚拟化交换机
+## (FW)防火墙
+##  (WAF)WEB 应用防火墙
+## (BC)网络日志系统
+## 无线交换机
+## POE 模块
+## 服务器
