@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>📝 zsb on 超级星小汤-tanglx</title>
-    <link>/posts/note/zsb/</link>
+    <link>https://blog.tanglx.cn/posts/note/zsb/</link>
     <description>Recent content in 📝 zsb on 超级星小汤-tanglx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 25 Sep 2022 14:36:09 +0800</lastBuildDate><atom:link href="/posts/note/zsb/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Sep 2022 14:36:09 +0800</lastBuildDate><atom:link href="https://blog.tanglx.cn/posts/note/zsb/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>函数连续与极限</title>
-      <link>/posts/note/zsb/%E5%87%BD%E6%95%B0%E8%BF%9E%E7%BB%AD%E4%B8%8E%E6%9E%81%E9%99%90/</link>
+      <link>https://blog.tanglx.cn/posts/note/zsb/%E5%87%BD%E6%95%B0%E8%BF%9E%E7%BB%AD%E4%B8%8E%E6%9E%81%E9%99%90/</link>
       <pubDate>Sun, 25 Sep 2022 14:36:09 +0800</pubDate>
       
-      <guid>/posts/note/zsb/%E5%87%BD%E6%95%B0%E8%BF%9E%E7%BB%AD%E4%B8%8E%E6%9E%81%E9%99%90/</guid>
+      <guid>https://blog.tanglx.cn/posts/note/zsb/%E5%87%BD%E6%95%B0%E8%BF%9E%E7%BB%AD%E4%B8%8E%E6%9E%81%E9%99%90/</guid>
       <description></description>
     </item>
     
     <item>
       <title>高等数学考试内容</title>
-      <link>/posts/note/zsb/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%E8%80%83%E8%AF%95%E5%86%85%E5%AE%B9/</link>
+      <link>https://blog.tanglx.cn/posts/note/zsb/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%E8%80%83%E8%AF%95%E5%86%85%E5%AE%B9/</link>
       <pubDate>Sun, 25 Sep 2022 14:04:45 +0800</pubDate>
       
-      <guid>/posts/note/zsb/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%E8%80%83%E8%AF%95%E5%86%85%E5%AE%B9/</guid>
+      <guid>https://blog.tanglx.cn/posts/note/zsb/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%E8%80%83%E8%AF%95%E5%86%85%E5%AE%B9/</guid>
       <description>考试类型 考试章节 往年考试占比</description>
     </item>
     
