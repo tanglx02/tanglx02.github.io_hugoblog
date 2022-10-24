@@ -6,7 +6,25 @@
     <description>Recent content on 超级星小汤-tanglx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 25 Sep 2022 14:36:09 +0800</lastBuildDate><atom:link href="https://blog.tanglx.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Oct 2022 18:03:03 +0800</lastBuildDate><atom:link href="https://blog.tanglx.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>搭建hugo博客</title>
+      <link>https://blog.tanglx.cn/posts/tech/%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Mon, 24 Oct 2022 18:03:03 +0800</pubDate>
+      
+      <guid>https://blog.tanglx.cn/posts/tech/%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2/</guid>
+      <description>[toc] 一、安装hugo windows用户可以先去官网下载hugo框架， hugo官网地址 ， 苹果用户有安装HomeBrew工具的话可以直接输入bre</description>
+    </item>
+    
+    <item>
+      <title>frp内网穿透服务配置</title>
+      <link>https://blog.tanglx.cn/posts/tech/frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Thu, 29 Sep 2022 10:56:03 +0800</pubDate>
+      
+      <guid>https://blog.tanglx.cn/posts/tech/frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE/</guid>
+      <description>系统信息 服务端 操作系统 centos7 ip地址 114.132.247.73 账号 root 密码1234@abcd 客户端 操作系统 Centos7 ip: 172.16.6.100 账号 root 密码 1234@abcd 一、官网地址 Frp官网 链接 Frp 官方下载地址 链接 二</description>
+    </item>
+    
     <item>
       <title>函数连续与极限</title>
       <link>https://blog.tanglx.cn/posts/note/zsb/%E5%87%BD%E6%95%B0%E8%BF%9E%E7%BB%AD%E4%B8%8E%E6%9E%81%E9%99%90/</link>

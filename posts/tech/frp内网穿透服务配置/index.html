@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>frp内网穿透服务配置 | 超级星小汤-tanglx</title>
+<meta name="keywords" content="">
+<meta name="description" content="系统信息 服务端 操作系统 centos7 ip地址 114.132.247.73 账号 root 密码1234@abcd 客户端 操作系统 Centos7 ip: 172.16.6.100 账号 root 密码 1234@abcd 一、官网地址 Frp官网 链接 Frp 官方下载地址 链接 二">
+<meta name="author" content="
+作者:&nbsp;小汤">
+<link rel="canonical" href="https://blog.tanglx.cn/posts/tech/frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.aa70a0c9a250ca0c244d45bd11cc86f4dd82a1bc61a196c5285e14b70b1f8b36.css" integrity="sha256-qnCgyaJQygwkTUW9EcyG9N2CobxhoZbFKF4UtwsfizY=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+        onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://blog.tanglx.cn/img/avatar.jpg">
+<link rel="icon" type="image/png" sizes="16x16" href="https://blog.tanglx.cn/img/avatar.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="https://blog.tanglx.cn/img/avatar.jpg">
+<link rel="apple-touch-icon" href="https://blog.tanglx.cn/img/avatar.jpg">
+<link rel="mask-icon" href="https://blog.tanglx.cn/img/avatar.jpg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = ""; 
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<meta property="og:title" content="frp内网穿透服务配置" />
+<meta property="og:description" content="系统信息 服务端 操作系统 centos7 ip地址 114.132.247.73 账号 root 密码1234@abcd 客户端 操作系统 Centos7 ip: 172.16.6.100 账号 root 密码 1234@abcd 一、官网地址 Frp官网 链接 Frp 官方下载地址 链接 二" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.tanglx.cn/posts/tech/frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-29T10:56:03&#43;08:00" />
+<meta property="article:modified_time" content="2022-09-29T10:56:03&#43;08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="frp内网穿透服务配置"/>
+<meta name="twitter:description" content="系统信息 服务端 操作系统 centos7 ip地址 114.132.247.73 账号 root 密码1234@abcd 客户端 操作系统 Centos7 ip: 172.16.6.100 账号 root 密码 1234@abcd 一、官网地址 Frp官网 链接 Frp 官方下载地址 链接 二"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "📚文章",
+      "item": "https://blog.tanglx.cn/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "👨🏻‍💻 技术",
+      "item": "https://blog.tanglx.cn/posts/tech/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "frp内网穿透服务配置",
+      "item": "https://blog.tanglx.cn/posts/tech/frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "frp内网穿透服务配置",
+  "name": "frp内网穿透服务配置",
+  "description": "系统信息 服务端 操作系统 centos7 ip地址 114.132.247.73 账号 root 密码1234@abcd 客户端 操作系统 Centos7 ip: 172.16.6.100 账号 root 密码 1234@abcd 一、官网地址 Frp官网 链接 Frp 官方下载地址 链接 二",
+  "keywords": [
+    ""
+  ],
+  "articleBody": "系统信息  服务端  操作系统 centos7 ip地址 114.132.247.73 账号 root 密码1234@abcd\n 客户端  操作系统 Centos7 ip: 172.16.6.100 账号 root 密码 1234@abcd\n一、官网地址 Frp官网 链接 Frp 官方下载地址 链接\n二、服务器端 1.使用工具 frp v0.44.0版本 centos7\n2.部署代码 下载得到frp_0.44.0_linux_amd64.tar.gz 在服务端中解压获得文件中包括 frps frps.ini frps是监听程序 frps.ini 是服务端参数\n[common] bind_addr = 0.0.0.0 bind_port = 10000 bind_udp_port = 10001 kcp_bind_port = 10002 vhost_http_port = 80 vhost_https_port = 443 subdomain_host = frp.tanglx.cn dashboard_addr = 0.0.0.0 dashboard_port = 11000 dashboard_user = root dashboard_pwd = 1234@abcd token = 770fed4ca2aabd20ae9a5dd774711de2 max_pool_count = 100 log_file = ./frps.log log_level = info log_max_days = 3 3.启动frps ./frps -c ./frps.ini 三、客户端 编辑 frpc.ini\n[common] server_addr = frp.tanglx.cn server_port = 10000 token = 770fed4ca2aabd20ae9a5dd774711de2 user = frpc  [代理服务器] type = tcp local_ip = 172.16.6.100 local_port = 22 remote_port = 11022  [二层 s4600] type = tcp local_ip = 172.16.6.101 local_port = 23 remote_port = 11001  [AC DCWS-6028] type = tcp local_ip = 172.16.6.102 local_port = 23 remote_port = 11002  [三层 CS6200-28X-EI] type = tcp local_ip = 172.16.6.103 local_port = 443 remote_port = 11003  [网络日志系统] type = tcp local_ip = 172.16.6.104 local_port = 443 remote_port = 11004  [下一代防火墙] type = tcp local_ip = 172.16.6.105 local_port = 443 remote_port = 11005  [WEB应用防火墙] type = tcp local_ip = 172.16.6.106 local_port = 443 remote_port = 11006 启动客户端\n./frpc -c ./frpc.ini 四、开机自启 a. 如Linux服务端上没有安装 systemd，可以使用 yum 或 apt 等命令安装 systemd\n# yum yum install systemd # apt apt install systemd b. 使用文本编辑器，如 vim 创建并编辑 frps.service 文件。\n$ vim /etc/systemd/system/frps.service 写入内容\n[Unit] # 服务名称，可自定义 Description = frp server After = network.target syslog.target Wants = network.target  [Service] Type = simple # 启动frps的命令，需修改为您的frps的安装路径 ExecStart = /path/to/frps -c /path/to/frps.ini  [Install] WantedBy = multi-user.target c. 使用 systemd 命令，管理 frps\n # 启动frp systemctl start frps # 停止frp systemctl stop frps # 重启frp systemctl restart frps # 查看frp状态 systemctl status frps #配置开机自启 systemctl enable frps ",
+  "wordCount" : "577",
+  "inLanguage": "en",
+  "datePublished": "2022-09-29T10:56:03+08:00",
+  "dateModified": "2022-09-29T10:56:03+08:00",
+  "author":[{
+    "@type": "Person",
+    "name": "小汤"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.tanglx.cn/posts/tech/frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "超级星小汤-tanglx",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blog.tanglx.cn/img/avatar.jpg"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+<script async src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://blog.tanglx.cn" accesskey="h" title="超级星小汤 (Alt + H)">
+            <img src="https://blog.tanglx.cn/img/avatar.jpg" alt="logo" aria-label="logo"
+                 height="35">超级星小汤</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://blog.tanglx.cn/search" title="🔍 搜索 (Alt &#43; /)" accesskey=/>
+                <span>🔍 搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://blog.tanglx.cn/" title="🏠 主页">
+                <span>🏠 主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://blog.tanglx.cn/posts" title="📚 文章">
+                <span>📚 文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://blog.tanglx.cn/tags" title="🧩 标签">
+                <span>🧩 标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://blog.tanglx.cn/archives/" title="⏱ 时间轴">
+                <span>⏱ 时间轴</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://blog.tanglx.cn/about" title="🙋🏻‍♂️ 关于">
+                <span>🙋🏻‍♂️ 关于</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://blog.tanglx.cn/links" title="🤝 友链">
+                <span>🤝 友链</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main page">
+<article class="post-single">
+
+
+
+    <div id="single-content">
+        <header class="post-header">
+            <div class="breadcrumbs"><a href="https://blog.tanglx.cn">主页</a>&nbsp;»&nbsp;<a href="https://blog.tanglx.cn/posts/">📚文章</a>&nbsp;»&nbsp;<a href="https://blog.tanglx.cn/posts/tech/">👨🏻‍💻 技术</a></div>
+            <h1 class="post-title">
+                frp内网穿透服务配置
+            </h1>
+            <div class="post-meta">创建:&nbsp;<span title='2022-09-29 10:56:03 +0800 CST'>2022-09-29</span>&nbsp;|&nbsp;更新:&nbsp;2022-09-29&nbsp;|&nbsp;字数:&nbsp;577字&nbsp;|&nbsp;时长:&nbsp;2分钟&nbsp;|&nbsp;
+作者:&nbsp;小汤
+
+
+
+                &nbsp;|&nbsp;标签: &nbsp;
+                <ul class="post-tags-meta">
+                    <a href="https://blog.tanglx.cn/tags/%E6%8A%80%E6%9C%AF/">技术</a>
+                    <a href="https://blog.tanglx.cn/tags/frp/">、frp</a>
+                </ul>
+
+                
+                <span id="busuanzi_container_page_pv">
+                &nbsp;| 访问: <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+</div>
+        </header> 
+        <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">文章目录</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e7%b3%bb%e7%bb%9f%e4%bf%a1%e6%81%af" aria-label="系统信息">系统信息</a><ul>
+                        
+                <li>
+                    <a href="#%e4%b8%80%e5%ae%98%e7%bd%91%e5%9c%b0%e5%9d%80" aria-label="一、官网地址">一、官网地址</a></li>
+                <li>
+                    <a href="#%e4%ba%8c%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%ab%af" aria-label="二、服务器端">二、服务器端</a><ul>
+                        
+                <li>
+                    <a href="#1%e4%bd%bf%e7%94%a8%e5%b7%a5%e5%85%b7" aria-label="1.使用工具">1.使用工具</a></li>
+                <li>
+                    <a href="#2%e9%83%a8%e7%bd%b2%e4%bb%a3%e7%a0%81" aria-label="2.部署代码">2.部署代码</a></li>
+                <li>
+                    <a href="#3%e5%90%af%e5%8a%a8frps" aria-label="3.启动frps">3.启动frps</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e4%b8%89%e5%ae%a2%e6%88%b7%e7%ab%af" aria-label="三、客户端">三、客户端</a></li>
+                <li>
+                    <a href="#%e5%9b%9b%e5%bc%80%e6%9c%ba%e8%87%aa%e5%90%af" aria-label="四、开机自启">四、开机自启</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+        
+        activeElement = elements[0];
+        const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+        document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+    }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+            const id = encodeURI(element.getAttribute('id')).toLowerCase();
+            if (element === activeElement){
+                document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+            } else {
+                document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+            }
+        })
+    }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+        
+        <div class="post-content"><h1 id="系统信息">系统信息<a hidden class="anchor" aria-hidden="true" href="#系统信息">#</a></h1>
+<ul>
+<li>服务端</li>
+</ul>
+<p>操作系统 centos7
+ip地址 114.132.247.73
+账号 root 密码1234@abcd</p>
+<ul>
+<li>客户端</li>
+</ul>
+<p>操作系统 Centos7
+ip: 172.16.6.100
+账号 root 密码 1234@abcd</p>
+<h2 id="一官网地址">一、官网地址<a hidden class="anchor" aria-hidden="true" href="#一官网地址">#</a></h2>
+<p>Frp官网 <a href="https://gofrp.org/">链接</a>
+Frp 官方下载地址 <a href="https://github.com/fatedier/frp/releases/tag/v0.44.0">链接</a></p>
+<h2 id="二服务器端">二、服务器端<a hidden class="anchor" aria-hidden="true" href="#二服务器端">#</a></h2>
+<h3 id="1使用工具">1.使用工具<a hidden class="anchor" aria-hidden="true" href="#1使用工具">#</a></h3>
+<p>frp v0.44.0版本
+centos7</p>
+<h3 id="2部署代码">2.部署代码<a hidden class="anchor" aria-hidden="true" href="#2部署代码">#</a></h3>
+<p>下载得到frp_0.44.0_linux_amd64.tar.gz 在服务端中解压获得文件中包括 frps frps.ini
+<img loading="lazy" src="http://picture.tanglx.cn/images/2022/1664420778438.png" alt="enter description here"  />
+</p>
+<p>frps是监听程序 frps.ini 是服务端参数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[common]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">bind_addr</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">0.0.0.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">bind_port</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">10000</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">bind_udp_port</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">10001</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">kcp_bind_port</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">10002</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">vhost_http_port</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">80</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">vhost_https_port</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">443</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">subdomain_host</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">frp.tanglx.cn</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">dashboard_addr</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">0.0.0.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">dashboard_port</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">11000</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">dashboard_user</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">root</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">dashboard_pwd</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">1234@abcd</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">token</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">770fed4ca2aabd20ae9a5dd774711de2</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">max_pool_count</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">100</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">log_file</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">./frps.log</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">log_level</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">info</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">log_max_days</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">3</span>
+</span></span></code></pre></div><h3 id="3启动frps">3.启动frps<a hidden class="anchor" aria-hidden="true" href="#3启动frps">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-awk" data-lang="awk"><span style="display:flex;"><span>.<span style="color:#f92672">/</span><span style="color:#a6e22e">frps</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">c</span> .<span style="color:#f92672">/</span><span style="color:#a6e22e">frps</span>.<span style="color:#a6e22e">ini</span> 
+</span></span></code></pre></div><h2 id="三客户端">三、客户端<a hidden class="anchor" aria-hidden="true" href="#三客户端">#</a></h2>
+<p>编辑 frpc.ini</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-awk" data-lang="awk"><span style="display:flex;"><span>[<span style="color:#a6e22e">common</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">server_addr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">frp</span>.<span style="color:#a6e22e">tanglx</span>.<span style="color:#a6e22e">cn</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">server_port</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10000</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">token</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">770</span><span style="color:#a6e22e">fed4ca2aabd20ae9a5dd774711de2</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">frpc</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#960050;background-color:#1e0010">代理服务器</span>]   
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">tcp</span> 
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">local_ip</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">172.16</span>.<span style="color:#ae81ff">6.100</span>    
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">local_port</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">22</span>         
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">remote_port</span> <span style="color:#f92672">=</span>  <span style="color:#ae81ff">11022</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#960050;background-color:#1e0010">二层</span> <span style="color:#a6e22e">s4600</span>]   
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">tcp</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">local_ip</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">172.16</span>.<span style="color:#ae81ff">6.101</span>    
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">local_port</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">23</span>         
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">remote_port</span> <span style="color:#f92672">=</span>  <span style="color:#ae81ff">11001</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">AC</span> <span style="color:#a6e22e">DCWS</span><span style="color:#f92672">-</span><span style="color:#ae81ff">6028</span>]   
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">tcp</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">local_ip</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">172.16</span>.<span style="color:#ae81ff">6.102</span>    
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">local_port</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">23</span>         
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">remote_port</span> <span style="color:#f92672">=</span>  <span style="color:#ae81ff">11002</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#960050;background-color:#1e0010">三层</span> <span style="color:#a6e22e">CS6200</span><span style="color:#f92672">-</span><span style="color:#ae81ff">28</span><span style="color:#a6e22e">X</span><span style="color:#f92672">-</span><span style="color:#a6e22e">EI</span>]   
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">tcp</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">local_ip</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">172.16</span>.<span style="color:#ae81ff">6.103</span>    
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">local_port</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">443</span>         
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">remote_port</span> <span style="color:#f92672">=</span>  <span style="color:#ae81ff">11003</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#960050;background-color:#1e0010">网络日志系统</span>]   
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">tcp</span> 
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">local_ip</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">172.16</span>.<span style="color:#ae81ff">6.104</span>   
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">local_port</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">443</span>         
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">remote_port</span> <span style="color:#f92672">=</span>  <span style="color:#ae81ff">11004</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#960050;background-color:#1e0010">下一代防火墙</span>]   
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">tcp</span> 
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">local_ip</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">172.16</span>.<span style="color:#ae81ff">6.105</span>   
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">local_port</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">443</span>         
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">remote_port</span> <span style="color:#f92672">=</span>  <span style="color:#ae81ff">11005</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">WEB应用防火墙</span>]   
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">tcp</span> 
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">local_ip</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">172.16</span>.<span style="color:#ae81ff">6.106</span>   
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">local_port</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">443</span>         
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">remote_port</span> <span style="color:#f92672">=</span>  <span style="color:#ae81ff">11006</span>
+</span></span></code></pre></div><p>启动客户端</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./frpc -c ./frpc.ini
+</span></span></code></pre></div><h2 id="四开机自启">四、开机自启<a hidden class="anchor" aria-hidden="true" href="#四开机自启">#</a></h2>
+<p>a. 如Linux服务端上没有安装 systemd，可以使用 yum 或 apt 等命令安装 systemd</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span><span style="color:#75715e"># yum
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">yum</span> <span style="color:#960050;background-color:#1e0010">install</span> <span style="color:#960050;background-color:#1e0010">systemd
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># apt
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">apt</span> <span style="color:#960050;background-color:#1e0010">install</span> <span style="color:#960050;background-color:#1e0010">systemd
+</span></span></span></code></pre></div><p>b. 使用文本编辑器，如 vim 创建并编辑 frps.service 文件。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gradle" data-lang="gradle"><span style="display:flex;"><span>$ vim <span style="color:#e6db74">/etc/</span>systemd<span style="color:#e6db74">/system/</span>frps<span style="color:#f92672">.</span><span style="color:#a6e22e">service</span>
+</span></span></code></pre></div><p>写入内容</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 服务名称，可自定义</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">frp server</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">After</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">network.target syslog.target</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Wants</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">network.target</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Type</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">simple</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 启动frps的命令，需修改为您的frps的安装路径</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecStart</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">/path/to/frps -c /path/to/frps.ini</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WantedBy</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">multi-user.target</span>
+</span></span></code></pre></div><p>c. 使用 systemd 命令，管理 frps</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span> # 启动frp
+</span></span><span style="display:flex;"><span>systemctl start frps
+</span></span><span style="display:flex;"><span># 停止frp
+</span></span><span style="display:flex;"><span>systemctl stop frps
+</span></span><span style="display:flex;"><span># 重启frp
+</span></span><span style="display:flex;"><span>systemctl restart frps
+</span></span><span style="display:flex;"><span># 查看frp状态
+</span></span><span style="display:flex;"><span>systemctl status frps
+</span></span><span style="display:flex;"><span>#配置开机自启
+</span></span><span style="display:flex;"><span>systemctl enable frps
+</span></span></code></pre></div>
+
+        </div>
+        <div class="post-reward">
+            <div style="padding: 0 0 0 0; margin: 0 0 0 0; width: 100%; font-size:16px; text-align: center;">
+                <div id="QR" style="opacity: 0;">
+                    <div id="wechat" style="display: inline-block">
+                        <a class="fancybox" rel="group">
+                            <img id="wechat_qr" src="/img/wechat_pay.png" alt="wechat_pay"></a>
+                        <p>微信</p>
+                    </div>
+                    <div id="alipay" style="display: inline-block">
+                        <a class="fancybox" rel="group">
+                            <img id="alipay_qr" src="/img/alipay.png" alt="alipay"></a>
+                        <p>支付宝</p>
+                    </div>
+                </div>
+                <button id="rewardButton"
+                        onclick="
+                    var qr = document.getElementById('QR');
+                    if (qr.style.opacity === '0') {
+                        qr.style.opacity='1';
+                    } else {
+                        qr.style.opacity='0'
+                    }"
+                >
+                    <span>🧧 鼓励</span>
+                </button>
+            </div>
+        </div>
+
+        <footer class="post-footer">
+            
+<nav class="paginav">
+  <a class="prev" href="https://blog.tanglx.cn/posts/tech/%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>搭建hugo博客</span>
+  </a>
+  <a class="next" href="https://blog.tanglx.cn/posts/note/zsb/%E5%87%BD%E6%95%B0%E8%BF%9E%E7%BB%AD%E4%B8%8E%E6%9E%81%E9%99%90/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>函数连续与极限</span>
+  </a>
+</nav>
+
+        </footer>
+    </div>
+
+
+
+<div id="lv-container" data-id="city" data-uid="MTAyMC81NzQ0My8zMzkwNw==">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
+</article>
+</main>
+
+
+<script async src="https://unpkg.com/mermaid@8.8.1/dist/mermaid.min.js"></script>
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<footer class="footer">
+    <span>
+        Copyright
+        &copy;
+        2020-2022 
+        <a href="https://blog.tanglx.cn" style="color:#939393;">超级星小汤-tanglx</a>
+         All Rights Reserved
+    </span>
+
+    <a href="https://beian.miit.gov.cn/" target="_blank" style="color:#939393;">滇ICP备20005685号-3</a>&nbsp;
+
+ 
+
+    <span id="busuanzi_container">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        总访客数: <span id="busuanzi_value_site_uv"></span>
+        总访问量: <span id="busuanzi_value_site_pv"></span>
+    </span>
+    
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <span class="topInner">
+        <svg class="topSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z"/>
+        </svg>
+        <span id="read_progress"></span>
+    </span>
+</a>
+
+<script>
+    document.addEventListener('scroll', function (e) {
+        const readProgress = document.getElementById("read_progress");
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = document.documentElement.clientHeight;
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        
+        readProgress.innerText = ((scrollTop / (scrollHeight - clientHeight)).toFixed(2) * 100).toFixed(0);
+    })
+</script>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+
+<script>
+    document.body.addEventListener('copy', function (e) {
+        if (window.getSelection().toString() && window.getSelection().toString().length > 50) {
+            let clipboardData = e.clipboardData || window.clipboardData;
+            if (clipboardData) {
+                e.preventDefault();
+                let htmlData = window.getSelection().toString() 
+				
+				
+                
+                
+                
+					;
+                let textData = window.getSelection().toString() 
+				
+                
+                
+                
+					
+					;
+                clipboardData.setData('text/html', htmlData);
+                clipboardData.setData('text/plain', textData);
+            }
+        }
+    });
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = '📄复制';
+
+        function copyingDone() {
+            copybutton.innerText = '👌🏻已复制!';
+            setTimeout(() => {
+                copybutton.innerText = '📄复制';
+            }, 2000);
+        }
+ 
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                let text = codeblock.textContent
+				
+                
+                
+                
+				;
+                navigator.clipboard.writeText(text);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) {
+            }
+            ;
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+
+</body>
+
+</html>
